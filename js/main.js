@@ -83,7 +83,7 @@ $(
             $('#lite-box-modal').fadeIn();
         })
 
-        // 
+        // display clicked small image as main image 
         let pics = document.querySelectorAll('.small-pic');
 
         pics.forEach((element, index) => {

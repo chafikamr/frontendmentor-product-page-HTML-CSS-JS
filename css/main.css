@@ -28,6 +28,7 @@
     
     header .navbar-brand a {
         color: black;
+        margin: 0 20px 0 0;
     }
     
     header .nav-item {
@@ -40,7 +41,7 @@
         width: 0;
         height: 4px;
         background-color: coral;
-        bottom: -18px;
+        bottom: -26px;
         right: 0;
         transition: .3s ease-in-out;
     }
@@ -65,6 +66,24 @@
         font-size: 19px;
         color: #888;
         cursor: pointer;
+        position: relative;
+    }
+    
+    header .cart_icon::after {
+        content: '3';
+        /* padding: 7px; */
+        width: 23px;
+        border-radius: 50%;
+        background-color: coral;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        left: 11px;
+        top: -4px;
+        height: 23px;
+        position: absolute;
+        font-size: 12px;
     }
     
     header .add-o-card {
@@ -73,8 +92,9 @@
     
     .cart-content {
         position: absolute;
-        width: 200px;
-        height: 123px;
+        width: 300px;
+        /* height: 123px; */
+        height: fit-content;
         background-color: white;
         padding: 12px;
         border-radius: 5px;
@@ -91,11 +111,32 @@
     
     .cart-content header {
         border-bottom: 1px solid rgb(156, 156, 156);
+        margin-bottom: 20px;
     }
     
     .cart-content header i {
         font-size: 14px;
         cursor: pointer;
+    }
+    
+    .navbar {
+        position: static;
+    }
+    
+    @media (max-width: 762px) {
+        .navbar-nav {
+            position: absolute;
+            background: white;
+            width: 50%;
+            top: 0;
+            left: 0;
+            z-index: 3;
+            padding: 10px;
+            height: 100%;
+        }
+        header .nav-item::before {
+            display: none;
+        }
     }
     /* End header section */
     /* Start product details */
@@ -241,7 +282,40 @@
         .cart-content {
             width: 90%;
             right: 5%;
-            height: 300px;
+            height: fit-content;
             top: 10%;
         }
+    }
+    /*** order in cart**/
+    
+    .product-in-cart .img {
+        width: 20%;
+        margin-right: 10px;
+    }
+    
+    .product-in-cart img {
+        width: 100%;
+        display: block;
+    }
+    
+    .product-in-cart .order_title {
+        font-size: 11px;
+        display: block;
+    }
+    
+    .delet_order {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .order_details {
+        width: 80%;
+    }
+    
+    .cart-content .btn {
+        background-color: coral;
+        color: white;
+        width: 100%;
+        margin-top: 10px;
     }
