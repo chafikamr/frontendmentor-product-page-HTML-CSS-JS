@@ -14,6 +14,10 @@
         box-sizing: border-box;
     }
     
+    body {
+        position: relative;
+    }
+    
     ul {
         padding: 0;
         margin: 0;
@@ -34,7 +38,7 @@
         position: absolute;
         content: '';
         width: 0;
-        height: 2px;
+        height: 4px;
         background-color: coral;
         bottom: -18px;
         right: 0;
@@ -60,6 +64,38 @@
     header .add-o-card i {
         font-size: 19px;
         color: #888;
+        cursor: pointer;
+    }
+    
+    header .add-o-card {
+        position: relative;
+    }
+    
+    .cart-content {
+        position: absolute;
+        width: 200px;
+        height: 123px;
+        background-color: white;
+        padding: 12px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 7px 0px #0000000d;
+        bottom: -140px;
+        right: -13px;
+        font-size: 13px;
+    }
+    
+    .empty-card {
+        font-size: 13px;
+        color: #888;
+    }
+    
+    .cart-content header {
+        border-bottom: 1px solid rgb(156, 156, 156);
+    }
+    
+    .cart-content header i {
+        font-size: 14px;
+        cursor: pointer;
     }
     /* End header section */
     /* Start product details */
@@ -86,13 +122,24 @@
     }
     
     .product-thumbnail .thumbnail {
-        width: 400px;
+        width: 100%;
+        cursor: pointer;
     }
     
     .product-thumbnail .thumbnail .main-img img {
         display: inline-block;
         border-radius: 10px;
         width: 100%;
+    }
+    
+    .blure {
+        opacity: 0.6;
+        cursor: pointer;
+        transition: transform .3s ease-in-out;
+    }
+    
+    .blure:hover {
+        transform: translateY(-5px);
     }
     
     .product-thumbnail ul img {
@@ -120,4 +167,81 @@
         color: white;
         width: 200px;
         box-shadow: 2px 4px 9px 0px #ff7f50a8;
+        transition: box-shadow .3s ease-in-out;
+    }
+    
+    .action .add-to-card-botton .btn:hover {
+        box-shadow: 2px 4px 15px 3px #ff7f5057;
+    }
+    
+    .datails_padination {
+        padding: 50px;
+    }
+    
+    @media (max-width: 762px) {
+        .datails_padination {
+            padding: 30px 20px;
+        }
+    }
+    /*** Start lite box**/
+    
+    .lite-box-container {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        display: none;
+        z-index: 3;
+    }
+    
+    .lite-box-modal {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        background-color: black;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .lite-box-modal img {
+        width: 500px;
+    }
+    
+    .lite-box-modal .arrow {
+        font-size: 30px;
+        color: white;
+        margin: 0 50px;
+        cursor: pointer;
+        transition: color .3s ease-in-out;
+    }
+    
+    .lite-box-modal .arrow:hover {
+        color: coral;
+    }
+    
+    .lite-box-modal .modal-close-ic {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    
+    @media (max-width: 762px) {
+        .lite-box-modal img {
+            width: 90%;
+        }
+        header .add-o-card {
+            position: static;
+        }
+        .cart-content {
+            width: 90%;
+            right: 5%;
+            height: 300px;
+            top: 10%;
+        }
     }
